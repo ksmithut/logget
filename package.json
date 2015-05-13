@@ -4,7 +4,12 @@
   "description": "A wrapper around winston logger for scalable application logging",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "jshint": "jshint --reporter node_modules/jshint-stylish/stylish.js index.js",
+    "check-cov": "istanbul check-coverage --statements 100 --functions 100 --branches 100 --lines 100",
+    "checkcov": "istanbul check-coverage",
+    "test": "istanbul cover _mocha",
+    "posttest": " npm run checkcov; npm run jshint;",
+    "codeclimate": "cat ./coverage/lcov.info | codeclimate"
   },
   "repository": {
     "type": "git",
