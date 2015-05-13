@@ -2,7 +2,6 @@
 
 var format  = require('util').format;
 var assert  = require('assert');
-var clone   = require('clone');
 var assign  = require('object-assign');
 var winston = require('winston');
 
@@ -10,13 +9,7 @@ var winston = require('winston');
  * @member Log~loggers
  * @description keeps track of the different namespaced loggers
  */
-var loggers = new winston.Container();
-
-/**
- * @member Log~transports
- * @description keeps track of the transports to be used
- */
-var transports;
+var loggers;
 
 /**
  * @member Log~hasConfigured
@@ -48,12 +41,11 @@ function Log(namespace) {
 
   if (!hasConfigured) { Log.configure(); }
 
-  var logger = loggers.add(namespace, {transports: transports});
-  Object.keys(logger.transports).map(function (transportName) {
-    logger.transports[transportName].label = namespace;
-  });
+  var logger = loggers.add(namespace);
 
-  Object.defineProperty(this, '_logger', {get: function () { return logger; }});
+  Object.keys(logger.levels).map(function (level) {
+    this[level] = logger[level];
+  }, this);
 
 }
 
@@ -70,21 +62,16 @@ Log.configure = function configure(options) {
   hasConfigured = true;
 
   // Default options
-  options = assign({
-    transports: []
+  var loggerOptions = assign({
+    transports: [
+      new winston.transports.Console({
+        colorize: true,
+        prettyPrint: true
+      })
+    ]
   }, options);
 
-  // Initialize transports
-  transports = (options.transports || []);
-  transports = Array.isArray(transports) ? transports : [transports];
-  // If there were no transports assigned, use the console one by default.
-  if (transports.length === 0) {
-    transports.push(new winston.transports.Console({
-      colorize: true,
-      prettyPrint: true,
-      depth: 5
-    }));
-  }
+  loggers = new winston.Container(loggerOptions);
 
 };
 
