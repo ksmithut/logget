@@ -1,0 +1,39 @@
+{
+  "name": "logget",
+  "version": "0.0.1",
+  "description": "A wrapper around winston logger for scalable application logging",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksmithut/logget.git"
+  },
+  "keywords": [
+    "log",
+    "winston",
+    "application"
+  ],
+  "author": "ksmithut",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksmithut/logget/issues"
+  },
+  "homepage": "https://github.com/ksmithut/logget#readme",
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "clear-require": "^1.0.1",
+    "codeclimate-test-reporter": "0.0.4",
+    "istanbul": "^0.3.14",
+    "jshint": "^2.7.0",
+    "jshint-stylish": "^1.0.2",
+    "mocha": "^2.2.4",
+    "mocha-lcov-reporter": "0.0.2"
+  },
+  "dependencies": {
+    "clone": "^1.0.2",
+    "object-assign": "^2.0.0",
+    "winston": "^1.0.0"
+  }
+}
