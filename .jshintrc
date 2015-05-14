@@ -47,7 +47,7 @@
   "loopfunc"      : false,    // Don't define a function inside of a loop, unless you know about closures
   "moz"           : false,    // We're not developing specifically for Firefox
   "multistr"      : false,    // Don't use multiline strings
-  "plusplus"      : true,     // Don't use i++ or i--. use i += 1 or i -= 1
+  "plusplus"      : false,    // you can use i++ or i--.
   "proto"         : false,    // Don't use .__proto__
   "scripturl"     : false,    // Don't use script urls
   "strict"        : true,     // Must use strict mode

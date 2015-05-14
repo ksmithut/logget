@@ -4,7 +4,7 @@ var output = [];
 
 function TestTransport(options) {
   options = options || {};
-  this.name = 'captureTransport';
+  this.name = 'testTransport';
   this.level = options.level || 'silly';
 }
 require('util').inherits(TestTransport, require('winston').Transport);
