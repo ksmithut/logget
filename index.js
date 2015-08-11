@@ -1,7 +1,7 @@
 'use strict';
 
 var assert  = require('assert');
-var util    = require('util');
+var assign  = require('object-assign');
 var winston = require('winston');
 
 var DEFAULT_OPTIONS = {
@@ -57,7 +57,7 @@ function Log(namespace) {
 // other settings you would pass into `new winston.Logger()`.
 Log.configure = function configure(options) {
   assert(!logger, 'logget has already been configured');
-  logger = new winston.Logger(util._extend({}, options || DEFAULT_OPTIONS));
+  logger = new winston.Logger(assign({}, options || DEFAULT_OPTIONS));
 };
 
 // Log.transports
