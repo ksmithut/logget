@@ -1,8 +1,5 @@
 # logget
 
-[![io.js compatibility](https://img.shields.io/badge/io.js-compatible-brightgreen.svg?style=flat)](https://iojs.org/)
-[![node.js compatibility](https://img.shields.io/badge/node.js-compatible-brightgreen.svg?style=flat)](https://nodejs.org/)
-
 [![NPM version](http://img.shields.io/npm/v/logget.svg?style=flat)](https://www.npmjs.org/package/logget)
 [![Dependency Status](http://img.shields.io/david/ksmithut/logget.svg?style=flat)](https://david-dm.org/ksmithut/logget)
 [![Dev Dependency Status](http://img.shields.io/david/dev/ksmithut/logget.svg?style=flat)](https://david-dm.org/ksmithut/logget#info=devDependencies&view=table)
@@ -12,6 +9,8 @@
 
 A simple wrapper around [`winston`](https://github.com/winstonjs/winston) that
 helps give context to your logs.
+
+### Deprecated. Opt to use winston or bunyan directly.
 
 # Installation
 
