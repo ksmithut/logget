@@ -1,6 +1,6 @@
 {
   "name": "logget",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A wrapper around winston logger for scalable application logging",
   "main": "index.js",
   "scripts": {
